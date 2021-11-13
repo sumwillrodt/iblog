@@ -1,7 +1,7 @@
 # iblog
 
 ## Purpose
-Build the back end for an e-commerce site by taking a working Express.js API and configuring it to use Sequelize to interact with a MySQL database.
+Build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.
 
 ## Instructions
 * Clone this repository to your local computer
