@@ -5,7 +5,7 @@ const sequelize = require('../config/connection');
 //import models
 const { Post, User, Comment } = require('../models');
 
-//GET all existing posts
+//return(GET) all existing posts
 router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
@@ -29,9 +29,9 @@ router.get('/', (req, res) => {
       }
     ]
   })
-    .then(dbPostData => {
+    .then(dbPosts => {
       //pass a single post object into homepage template
-      res.render('homepage', dbPostData[0]);
+      res.render('homepage', dbPosts[0]);
     })
     .catch(err => {
       //return server error
