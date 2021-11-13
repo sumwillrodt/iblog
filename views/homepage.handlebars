@@ -2,11 +2,11 @@
   <li>
     <article class="post">
       <div class="title">
-        <a href="{{post_url}}" target="_blank">{{title}}</a>
-        <span>({{post_url}})</span>
+        <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
+        <span>({{post.post_url}})</span>
       </div>
       <div class="meta">
-        Posted by {{user.username}} on {{created_at}}:
+        Posted by {{user.username}} on {{post.created_at}}:
         |
         <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
       </div>

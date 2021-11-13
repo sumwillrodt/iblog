@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 
 
-//
+//GET all comments
 router.get('/', (req, res) => {
   Comment.findAll()
     .then(dbComments => res.json(dbComments))
@@ -28,7 +28,6 @@ router.post('/', (req, res) => {
 
 //DELETE comment
 router.delete('/:id', (req, res) => {
-  
   Comment.destroy({
     where: {
       id: req.params.id

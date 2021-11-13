@@ -1,7 +1,7 @@
 :root {
   --primary: #438772;
   --secondary: #09132c;
-  --teritary: #7c3b3b;
+  --teritary: #a04e4e;
   --neutral-1: #bec2a6;
   --neutral-2: #bda98f;
   --neutral-1: #ffffff;
@@ -31,7 +31,7 @@ a:hover {
 }
 
 button {
-  background-color: var(--primary);
+  background-color: var(--secondary);
   border: 0;
   padding: 1%;
   color: white;
