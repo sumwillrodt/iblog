@@ -5,7 +5,7 @@ const sequelize = require('./config/connection');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 //set up Handlebars.js as your app's template engine of choice:
 const exphbs = require('express-handlebars');
