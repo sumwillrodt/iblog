@@ -11,14 +11,14 @@
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
     "mysql": "^2.18.1",
-    "mysql2": "^2.3.3-rc.0"
+    "mysql2": "^2.3.3-rc.0",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.9.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "jest",
-    "start": "node server.js",
-    "watch": "nodeman server.js",
-    "seed": "node seeds/index.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
