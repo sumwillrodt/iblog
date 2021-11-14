@@ -55,8 +55,15 @@ router.post('/', (req, res) => {
     email: req.body.email,
     password: req.body.password
   })
+  //accessing session info
     .then(dbUser => {
-      res.json(dbUser);
+      req.session.save(() => {
+        req.session.user_id = dbUser.id;
+        req.session.username = dbUser.username;
+        req.session.loggedIn = true;
+    
+        res.json(dbUser);
+      });
     })
     .catch(err => {
       console.log(err);
@@ -64,7 +71,7 @@ router.post('/', (req, res) => {
     });
 });
 
-//GET login
+//LOGIN
 router.post('/login', (req, res) => {
   User.findOne({
     where: {
@@ -83,8 +90,25 @@ router.post('/login', (req, res) => {
       return;
     }
 
-    res.json({ user: dbUser, message: 'You are now logged in!' });
+    req.session.save(() => {
+      req.session.user_id = dbUser.id;
+      req.session.username = dbUser.username;
+      req.session.loggedIn = true;
+      
+      res.json({ user: dbUser, message: 'You are now logged in!' });
+    });
   });
+});
+
+//LOGOUT
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 //UPDATE user
