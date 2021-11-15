@@ -79,7 +79,7 @@ router.post('/login', (req, res) => {
     }
   }).then(dbUser => {
     if (!dbUser) {
-      res.status(400).json({ message: 'No user with that email address!' });
+      res.status(400).json({ message: 'No user with that email address was found!' });
       return;
     }
 
