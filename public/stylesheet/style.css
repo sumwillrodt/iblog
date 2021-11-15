@@ -49,6 +49,10 @@ button:hover {
   background-color: var(--secondary);
 }
 
+section {
+  padding-bottom: 20px;
+}
+
 .post-list {
   margin: 0;
   padding: 0;
